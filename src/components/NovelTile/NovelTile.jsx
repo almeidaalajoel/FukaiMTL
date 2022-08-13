@@ -20,7 +20,7 @@ export default function NovelTile({ title, description, image, author, link }) {
             <div className="">by {author}</div>
           </div>
           <div className="flex flex-col justify-center sm:w-[20rem] md:w-[26rem] lg:w-[32rem]">
-            <div className="whitespace-pre-wrap">{description}</div>
+            {description}
           </div>
         </div>
       </Link>
