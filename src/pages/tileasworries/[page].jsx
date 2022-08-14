@@ -62,7 +62,7 @@ export default function TileasWorries() {
       if (s !== null) {
         setSize(s);
         getHeight(s);
-      } else setSize("lg");
+      } else setSize("xl");
     }
   }, [size]);
 
