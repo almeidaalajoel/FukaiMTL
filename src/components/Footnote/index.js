@@ -1,2 +1,2 @@
-import Footnote from "./NewFootnote";
+import Footnote from "./Footnote";
 export default Footnote;

@@ -2,16 +2,73 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Markdown, { compiler } from "markdown-to-jsx";
 import ErrorPage from "next/error";
-import { ChLink, Footnote, Navigation, Separator } from "../../components";
+import {
+  ChLink,
+  FontSize,
+  Footnote,
+  Navigation,
+  Separator,
+} from "../../components";
 import { DiscussionEmbed } from "disqus-react";
 
 export default function TileasWorries() {
   const [chapter, setChapter] = useState("");
-  const router = useRouter();
   const [ready, setReady] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [currentCh, setCurrentCh] = useState(0);
+
+  const [size, setSize] = useState(null);
+  const [fontSize, setFontSize] = useState("1.25");
+  const [lineHeight, setLineHeight] = useState("1.75");
+  const getHeight = (s) => {
+    switch (s) {
+      case "xs":
+        setFontSize(".75");
+        setLineHeight("1");
+        break;
+      case "s":
+        setFontSize(".875");
+        setLineHeight("1.25");
+        break;
+      case "base":
+        setFontSize("1");
+        setLineHeight("1.5");
+        break;
+      case "lg":
+        setFontSize("1.125");
+        setLineHeight("1.75");
+        break;
+      case "xl":
+        setFontSize("1.25");
+        setLineHeight("1.75");
+        break;
+      case "2xl":
+        setFontSize("1.5");
+        setLineHeight("2");
+        break;
+      case "3xl":
+        setFontSize("1.875");
+        setLineHeight("2.25");
+        break;
+      case "4xl":
+        setFontSize("2.25");
+        setLineHeight("2.5");
+        break;
+    }
+  };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const s = localStorage.getItem("size");
+      if (s !== null) {
+        setSize(s);
+        getHeight(s);
+      } else setSize("lg");
+    }
+  }, [size]);
+
+  const router = useRouter();
   const { page } = router.query;
+
   const firstCh = 37;
   const lastCh = 39;
 
@@ -65,7 +122,12 @@ export default function TileasWorries() {
   );
 
   const Wrapper = ({ children }) => (
-    <div className="space-y-4 my-6">{children}</div>
+    <div
+      className="space-y-4 my-6"
+      style={{ fontSize: `${fontSize}rem`, lineHeight: `${lineHeight}rem` }}
+    >
+      {children}
+    </div>
   );
 
   return ready ? (
@@ -82,6 +144,12 @@ export default function TileasWorries() {
           nextURL={
             currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
           }
+        />
+        <FontSize
+          size={size}
+          setSize={setSize}
+          setFontSize={setFontSize}
+          setLineHeight={setLineHeight}
         />
         <div className="flex flex-grow justify-center">
           <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
