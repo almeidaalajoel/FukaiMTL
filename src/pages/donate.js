@@ -8,7 +8,7 @@ export default function Donate() {
       <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4">
         <h1>Donate</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
-        <div className="w-2/3 hover:cursor-pointer">
+        <div className="w-2/3 hover:cursor-pointer select-none">
           <Link href={"https://ko-fi.com/fukaimtl"}>
             <a>
               <Image src={require("../assets/kofi.png")} alt="ko-fi" />

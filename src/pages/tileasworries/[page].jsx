@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Markdown, { compiler } from "markdown-to-jsx";
 import ErrorPage from "next/error";
 import { ChLink, Footnote, Navigation, Separator } from "../../components";
+import { DiscussionEmbed } from "disqus-react";
 
 export default function TileasWorries() {
   const [chapter, setChapter] = useState("");
@@ -107,6 +108,15 @@ export default function TileasWorries() {
           nextURL={
             currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
           }
+        />
+        <DiscussionEmbed
+          shortname="fukaimtl"
+          config={{
+            url: `https://fukai-mtl.vercel.app/tileasworries/${page}`,
+            identifier: `tileasworries${page}`,
+            title: `Tilea's Worries ${page.toUpperCase()}`,
+            language: "en",
+          }}
         />
       </div>
     </div>

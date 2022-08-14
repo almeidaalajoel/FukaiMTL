@@ -9,7 +9,7 @@ export default function TOC({ image, title, chapters }) {
       <div className="bg-white flex flex-col flex-grow items-center w-100vw lg:w-[70rem]">
         <div className="flex flex-col items-center p-6 ">
           <div className="flex flex-col items-center justify-evenly p-3 border-2 border-solid bg-[rgb(230,240,240)] border-black  rounded-xl mb-5 sm:mb-0 sm:mr-4">
-            <div className="w-[16rem] relative mb-3">
+            <div className="w-[16rem] relative mb-3 select-none">
               <Image
                 src={image}
                 alt={""}
