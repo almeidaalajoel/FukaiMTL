@@ -1,6 +1,6 @@
 import "../globals.css";
 import { Layout } from "../components";
-import { Script } from "next/script";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
