@@ -134,7 +134,7 @@ export default function TileasWorries() {
     </div>
   );
 
-  return ready ? (
+  return !ready ? (
     <div className="flex flex-col items-center ">
       <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
         <p className="self-center text-3xl text-[#282c34]">
