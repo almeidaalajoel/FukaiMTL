@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Footnote({ num, note, children }) {
+export default function Footnote({ num, note, children, size }) {
   const [showNote, setShowNote] = useState(false);
   return (
     <>
@@ -17,7 +17,7 @@ export default function Footnote({ num, note, children }) {
         onClick={() => setShowNote(false)}
         className={
           showNote
-            ? "mx-auto break-words select-none border-solid border border-green-100 text-[1rem] w-4/5 shadow-lg py-1 px-2 rounded-md bg-stone-100 min-h-[4rem] my-2 hover:cursor-pointer"
+            ? "mx-auto break-words select-none border-solid border border-green-100 w-4/5 text-[smaller] shadow-lg py-1 px-2 rounded-md bg-stone-100 h-min min-h-[3rem] my-2 hover:cursor-pointer"
             : "hidden"
         }
       >

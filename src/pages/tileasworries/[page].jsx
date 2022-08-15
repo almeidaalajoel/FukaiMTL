@@ -103,11 +103,15 @@ export default function TileasWorries() {
 
   const MyH1 = ({ children, ...props }) => (
     <>
-      <h1>{children}</h1>
-      <p className="text-slate-500 text-sm">
-        <strong>Translator</strong>: Bicksy{"    "}|{"    "}
-        <strong>Proofreader</strong>: Bicksy
-      </p>
+      <span className="text-[larger]">
+        <h1 className="text-[larger]">{children}</h1>
+      </span>
+      <div className="text-[smaller]">
+        <p className="text-slate-500 text-[smaller]">
+          <strong>Translator</strong>: Bicksy{"    "}|{"    "}
+          <strong>Proofreader</strong>: Bicksy
+        </p>
+      </div>
     </>
   );
 
@@ -132,7 +136,7 @@ export default function TileasWorries() {
 
   return ready ? (
     <div className="flex flex-col items-center ">
-      <div className="flex flex-grow flex-col w-full lg:w-[55rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
+      <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
         <p className="self-center text-3xl text-[#282c34]">
           {"Tilea's Worries"}
         </p>
@@ -158,7 +162,7 @@ export default function TileasWorries() {
           options={{
             wrapper: Wrapper,
             overrides: {
-              Footnote: { component: Footnote },
+              Footnote: { component: Footnote, props: { size: size } },
               h1: { component: MyH1 },
               hr: { component: MyHr },
               ChLink: { component: ChLink },
