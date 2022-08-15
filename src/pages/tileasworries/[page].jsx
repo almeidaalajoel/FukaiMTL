@@ -104,7 +104,7 @@ export default function TileasWorries() {
   const MyH1 = ({ children, ...props }) => (
     <>
       <span className="text-[larger]">
-        <h1 className="text-[larger]">{children}</h1>
+        <h1 className="text-[larger] leading-tight">{children}</h1>
       </span>
       <div className="text-[smaller]">
         <p className="text-slate-500 text-[smaller]">
