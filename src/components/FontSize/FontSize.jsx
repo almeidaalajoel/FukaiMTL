@@ -59,96 +59,76 @@ export default function FontSize({
     }
   };
 
-  //   return (
-  //     <div className="flex justify-center flex-row mb-3">
-  //       <span
-  //         className={size === "xs" ? "flex flex-[3]" : "flex flex-[2]"}
-  //       ></span>
-  //       <span className={size === "xs" ? "hidden" : "flex flex-1 justify-center"}>
-  //         <svg
-  //           onClick={() => smaller(size)}
-  //           xmlns="http://www.w3.org/2000/svg"
-  //           className="h-7 w-7 hover:cursor-pointer"
-  //           viewBox="0 0 20 20"
-  //           fill="currentColor"
-  //           color="rgb(46,51,59)"
-  //         >
-  //           <path
-  //             fillRule="evenodd"
-  //             d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-  //             clipRule="evenodd"
-  //           />
-  //         </svg>
-  //       </span>
-  //       <span className="select-none flex flex-1 justify-center">{size}</span>
-  //       <span
-  //         className={size === "4xl" ? "hidden" : "flex flex-1 justify-center"}
-  //       >
-  //         <svg
-  //           onClick={() => bigger(size)}
-  //           xmlns="http://www.w3.org/2000/svg"
-  //           className="h-7 w-7 hover:cursor-pointer"
-  //           viewBox="0 0 20 20"
-  //           fill="currentColor"
-  //           color="rgb(46,51,59)"
-  //         >
-  //           <path
-  //             fillRule="evenodd"
-  //             d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-  //             clipRule="evenodd"
-  //           />
-  //         </svg>
-  //       </span>
-  //       <span
-  //         className={size === "4xl" ? "flex flex-[3]" : "flex flex-[2]"}
-  //       ></span>
-  //     </div>
-  //   );
-  // }
+  const tSize = (s) => {
+    switch (s) {
+      case "xs":
+        return 0;
+      case "s":
+        return 1;
+      case "base":
+        return 2;
+      case "lg":
+        return 3;
+      case "xl":
+        return 4;
+      case "2xl":
+        return 5;
+      case "3xl":
+        return 6;
+      case "4xl":
+        return 7;
+    }
+  };
 
   return (
-    <div className="flex justify-center flex-row mb-3">
-      <span className="flex flex-1" />
-      <span className="flex flex-1 bg-slate-200 items-center rounded-3xl h-[3rem]">
-        <span className="flex flex-[2] justify-center">
-          <svg
-            onClick={() => smaller(size)}
-            xmlns="http://www.w3.org/2000/svg"
-            className={
-              size === "xs" ? "hidden" : "h-7 w-7 hover:cursor-pointer"
-            }
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            color="rgb(46,51,59)"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </span>
-        <span className="select-none flex flex-[8] justify-center">{size}</span>
-        <span className="flex flex-[2] justify-center">
-          <svg
-            onClick={() => bigger(size)}
-            xmlns="http://www.w3.org/2000/svg"
-            className={
-              size === "4xl" ? "hidden" : "h-7 w-7 hover:cursor-pointer"
-            }
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            color="rgb(46,51,59)"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </span>
+    <div className="flex mb-4 justify-center items-center">
+      <span>
+        <svg
+          onClick={() => smaller(size)}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-7 w-7 hover:cursor-pointer"
+          fill="none"
+          color={size === "xs" ? "gray" : "black"}
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
       </span>
-      <span className="flex flex-1" />
+      <span className="w-[4rem] h-[3.6rem] flex justify-center items-center">
+        <svg
+          width={`${2 + 0.2 * tSize(size)}rem`}
+          height={`${2 + 0.2 * tSize(size)}rem`}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>text-size</title>
+          <path d="M256 144L128 144 128 80 448 80 448 144 320 144 320 432 256 432 256 144ZM144 272L64 272 64 224 232 224 232 272 192 272 192 432 144 432 144 272Z" />
+        </svg>
+      </span>
+      <span>
+        <svg
+          onClick={() => bigger(size)}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-7 w-7 hover:cursor-pointer"
+          fill="none"
+          color={size === "4xl" ? "gray" : "black"}
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </span>
     </div>
   );
 }
