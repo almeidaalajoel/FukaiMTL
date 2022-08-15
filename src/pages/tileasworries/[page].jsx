@@ -135,64 +135,66 @@ export default function TileasWorries() {
   );
 
   return !ready ? (
-    <div className="flex flex-col items-center ">
-      <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
-        <p className="self-center text-3xl text-[#282c34]">
-          {"Tilea's Worries"}
-        </p>
-        <Navigation
-          TOClink="/tileasworries"
-          prevURL={
-            currentCh === firstCh ? "no" : `/tileasworries/v3c${currentCh - 1}`
-          }
-          nextURL={
-            currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
-          }
-        />
-        <FontSize
-          size={size}
-          setSize={setSize}
-          setFontSize={setFontSize}
-          setLineHeight={setLineHeight}
-        />
-        <div className="flex flex-grow justify-center">
-          <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
-        </div>
-        <Markdown
-          options={{
-            wrapper: Wrapper,
-            overrides: {
-              Footnote: { component: Footnote, props: { size: size } },
-              h1: { component: MyH1 },
-              hr: { component: MyHr },
-              ChLink: { component: ChLink },
-            },
-          }}
-        >
-          {chapter}
-        </Markdown>
-        <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
-        <Navigation
-          TOClink="/tileasworries"
-          prevURL={
-            currentCh === firstCh ? "no" : `/tileasworries/v3c${currentCh - 1}`
-          }
-          nextURL={
-            currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
-          }
-        />
-        <DiscussionEmbed
-          shortname="fukaimtl"
-          config={{
-            url: `https://fukai-mtl.vercel.app/tileasworries/${page}`,
-            identifier: `tileasworries${page}`,
-            title: `Tilea's Worries ${page.toUpperCase()}`,
-            language: "en",
-          }}
-        />
-      </div>
-    </div>
+    <div />
   ) : (
+    // return !ready ? (
+    //   <div className="flex flex-col items-center ">
+    //     <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
+    //       <p className="self-center text-3xl text-[#282c34]">
+    //         {"Tilea's Worries"}
+    //       </p>
+    //       <Navigation
+    //         TOClink="/tileasworries"
+    //         prevURL={
+    //           currentCh === firstCh ? "no" : `/tileasworries/v3c${currentCh - 1}`
+    //         }
+    //         nextURL={
+    //           currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
+    //         }
+    //       />
+    //       <FontSize
+    //         size={size}
+    //         setSize={setSize}
+    //         setFontSize={setFontSize}
+    //         setLineHeight={setLineHeight}
+    //       />
+    //       <div className="flex flex-grow justify-center">
+    //         <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
+    //       </div>
+    //       <Markdown
+    //         options={{
+    //           wrapper: Wrapper,
+    //           overrides: {
+    //             Footnote: { component: Footnote, props: { size: size } },
+    //             h1: { component: MyH1 },
+    //             hr: { component: MyHr },
+    //             ChLink: { component: ChLink },
+    //           },
+    //         }}
+    //       >
+    //         {chapter}
+    //       </Markdown>
+    //       <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
+    //       <Navigation
+    //         TOClink="/tileasworries"
+    //         prevURL={
+    //           currentCh === firstCh ? "no" : `/tileasworries/v3c${currentCh - 1}`
+    //         }
+    //         nextURL={
+    //           currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
+    //         }
+    //       />
+    //       <DiscussionEmbed
+    //         shortname="fukaimtl"
+    //         config={{
+    //           url: `https://fukai-mtl.vercel.app/tileasworries/${page}`,
+    //           identifier: `tileasworries${page}`,
+    //           title: `Tilea's Worries ${page.toUpperCase()}`,
+    //           language: "en",
+    //         }}
+    //       />
+    //     </div>
+    //   </div>
     <div className="flex flex-col h-full w-full items-center">
       <div className="flex w-full h-full lg:w-[55rem] bg-white items-center justify-center border-gray-300">
         <div role="status">
