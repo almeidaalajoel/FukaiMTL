@@ -48,7 +48,7 @@ export default function About() {
       <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4 pb-16">
         <h1>About</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
-        <div className="relative w-[18rem] select-none">
+        <div className="relative w-[16rem] select-none">
           <Image
             src={require("../../public/about/bicksy.jpg")}
             alt="bicksy"

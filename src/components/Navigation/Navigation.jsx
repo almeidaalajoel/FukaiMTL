@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navigation({ TOClink, prevURL, nextURL }) {
   return (
     <div className="flex justify-center my-4">
-      <span className="w-[7rem] leading-none flex justify-center items-center">
+      <span className="w-[7rem] leading-none flex justify-end items-center">
         {prevURL === "no" ? (
           <span>
             <svg
@@ -22,7 +22,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
               />
             </svg>
             <span className="text-center text-gray-500 ml-2 select-none">
-              Previous
+              Prev
             </span>
           </span>
         ) : (
@@ -43,7 +43,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
                 />
               </svg>
               <span className="text-center group-hover:underline text-blue-700 ml-2 select-none">
-                Previous
+                Prev
               </span>
             </a>
           </Link>
@@ -56,7 +56,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
           </a>
         </Link>
       </span>
-      <span className="w-[7rem] flex justify-center items-center">
+      <span className="w-[7rem] flex justify-start items-center">
         {nextURL === "no" ? (
           <span>
             <span className="text-center text-gray-500 mr-2 select-none">

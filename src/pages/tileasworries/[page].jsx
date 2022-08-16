@@ -155,9 +155,7 @@ export default function TileasWorries() {
           setFontSize={setFontSize}
           setLineHeight={setLineHeight}
         />
-        <div className="flex flex-grow justify-center">
-          <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
-        </div>
+        <div className="w-full self-center lg:w-[90%] h-[1px] bg-gray-300" />
         <Markdown
           options={{
             wrapper: Wrapper,
@@ -171,7 +169,7 @@ export default function TileasWorries() {
         >
           {chapter}
         </Markdown>
-        <div className="w-full lg:w-[90%] h-[1px] bg-gray-300" />
+        <div className="w-full self-center lg:w-[90%] h-[1px] bg-gray-300" />
         <Navigation
           TOClink="/tileasworries"
           prevURL={
