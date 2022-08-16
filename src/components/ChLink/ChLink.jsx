@@ -5,10 +5,7 @@ export default function ChLink({ link, name }) {
   return (
     <li className="mb-2">
       <Link href={link}>
-        <a
-          className="hover:text-blue-700 underline decoration-1 underline-offset-2"
-          title="test"
-        >
+        <a className="hover:text-blue-700 underline decoration-1 underline-offset-2">
           {name}
         </a>
       </Link>
