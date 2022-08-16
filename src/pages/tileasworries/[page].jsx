@@ -193,7 +193,7 @@ export default function TileasWorries() {
       </div>
     </div>
   ) : (
-    <div className="flex flex-col flex-grow w-full items-center dark:bg-black">
+    <div className="flex flex-col flex-grow w-full items-center bg-[rgb(230,230,230)] dark:bg-black">
       <div className="flex flex-col w-full flex-grow lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
         <div role="status">
           <svg
