@@ -194,7 +194,7 @@ export default function TileasWorries() {
     </div>
   ) : (
     <div className="flex flex-col flex-grow w-full items-center dark:bg-black">
-      <div className="flex w-full h-full lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
+      <div className="flex w-full flex-grow lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
         <div role="status">
           <svg
             aria-hidden="true"

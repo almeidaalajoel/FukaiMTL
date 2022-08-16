@@ -15,20 +15,17 @@ export default function Header({ setDark, dark }) {
           <a>FukaiMTL</a>
         </Link>
       </span>
-      <span className="flex flex-1 justify-center">
+      <span className="flex flex-1 justify-center ml-9">
         <Link href="/about">
           <a>About/Contact</a>
         </Link>
       </span>
-      <span className="flex flex-1 justify-end pr-3 lg:pr-0 lg:justify-center">
+      <span className="flex flex-1 justify-end lg:justify-center pr-6">
         <Link href="/donate">
           <a>Donate</a>
         </Link>
       </span>
-      <span
-        className="flex flex-1 justify-end pr-3 hover:cursor-pointer"
-        onClick={() => toggleDark()}
-      >
+      <span className="pr-3 hover:cursor-pointer" onClick={() => toggleDark()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
