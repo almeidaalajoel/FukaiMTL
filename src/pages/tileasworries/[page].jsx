@@ -198,7 +198,7 @@ export default function TileasWorries() {
     </div>
   ) : (
     <div className="h-full bg-white dark:bg-black">
-      <div className="h-full lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white lg:border-gray-300">
+      <div className="h-full lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white lg:border-gray-300 mx-auto">
         <div role="status" className="flex h-full justify-center items-center">
           <svg
             aria-hidden="true"
