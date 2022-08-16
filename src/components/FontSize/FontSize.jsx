@@ -86,7 +86,7 @@ export default function FontSize({
         <svg
           onClick={() => smaller(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-7 hover:cursor-pointer"
+          className="h-7 w-7 hover:cursor-pointer select-none"
           fill="none"
           color={size === "xs" ? "gray" : "black"}
           viewBox="0 0 24 24"

@@ -8,7 +8,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
         <span className="flex-1"></span>
       ) : (
         <Link href={prevURL}>
-          <a className="hover:underline flex-1 text-center">
+          <a className="hover:underline flex-1 text-center select-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 inline-flex"
@@ -28,13 +28,13 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
         </Link>
       )}
       <Link href={TOClink}>
-        <a className="hover:underline flex-1 text-center">TOC</a>
+        <a className="hover:underline flex-1 text-center select-none">TOC</a>
       </Link>
       {nextURL === "no" ? (
         <span className="flex-1"></span>
       ) : (
         <Link href={nextURL}>
-          <a className="hover:underline flex-1 text-center">
+          <a className="hover:underline flex-1 text-center select-none">
             <span className="mr-2">Next</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

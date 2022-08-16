@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="flex h-[6vh] items-center flex-shrink-0 bg-[rgb(46,51,59)] font-['ProximaNova'] text-white">
+    <div className="flex h-[6vh] items-center w-full flex-shrink-0 bg-[rgb(46,51,59)] font-['ProximaNova'] text-white">
       <span className="flex flex-1 pl-3">
         <Link href="/">
           <a>FukaiMTL</a>

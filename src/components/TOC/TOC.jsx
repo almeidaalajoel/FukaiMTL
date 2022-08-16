@@ -19,7 +19,7 @@ export default function TOC({ image, title, chapters }) {
             </div>
             <p className=" text-[1.75rem] text-[#282c34]">{title}</p>
           </div>
-          <div className="my-10 w-[90vw] lg:w-[60rem] h-[1px] bg-gray-300" />
+          <div className="my-10 w-[70%] lg:w-[60rem] h-[1px] bg-gray-300" />
           <h1>
             <strong>Table of Contents</strong>
           </h1>
