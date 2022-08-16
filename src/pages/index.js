@@ -32,11 +32,11 @@ export default function Home() {
   );
 
   return (
-    <div className="flex flex-col items-center h-full">
-      <div className="flex space-y-4 bg-white w-full flex-col items-center lg:w-[70rem] flex-grow pt-6 ">
-        <h1>Novels</h1>
+    <div className="flex flex-col items-center h-full dark:bg-black">
+      <div className="flex space-y-4 bg-white w-full flex-col items-center lg:w-[70rem] flex-grow pt-6 dark:bg-[rgb(21,19,19)]">
+        <h1 className="dark:text-gray-300">Novels</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
-        <div className="flex bg-white w-[100vw] lg:w-[70rem] flex-col items-center select-none">
+        <div className="flex bg-white w-[100vw] lg:w-[70rem] flex-col items-center select-none dark:bg-[rgb(21,19,19)]">
           <NovelTile
             title={`Tilea's Worries`}
             description={tileaDesc}

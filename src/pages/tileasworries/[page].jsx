@@ -104,10 +104,12 @@ export default function TileasWorries() {
   const MyH1 = ({ children, ...props }) => (
     <>
       <span className="text-[larger]">
-        <h1 className="text-[larger] leading-tight">{children}</h1>
+        <h1 className="text-[larger] leading-tight dark:text-gray-300">
+          {children}
+        </h1>
       </span>
       <div className="text-[smaller]">
-        <p className="text-slate-500 text-[smaller]">
+        <p className="text-slate-500 dark:text-slate-300 text-[smaller]">
           <strong>Translator</strong>: Bicksy{"    "}|{"    "}
           <strong>Proofreader</strong>: Bicksy
         </p>
@@ -135,10 +137,10 @@ export default function TileasWorries() {
   );
 
   return ready ? (
-    <div className="flex flex-col items-center ">
-      <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300">
-        <p className="self-center text-3xl text-[#282c34]">
-          {"Tilea's Worries"}
+    <div className="flex flex-col items-center dark:bg-black">
+      <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white dark:bg-[rgb(23,21,21)] dark:text-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
+        <p className="self-center text-3xl text-[#282c34] dark:text-white select-none">
+          Tilea's Worries
         </p>
         <Navigation
           TOClink="/tileasworries"
@@ -191,8 +193,8 @@ export default function TileasWorries() {
       </div>
     </div>
   ) : (
-    <div className="flex flex-col flex-grow w-full items-center">
-      <div className="flex w-full h-full lg:w-[55rem] bg-white items-center justify-center border-gray-300">
+    <div className="flex flex-col flex-grow w-full items-center dark:bg-black">
+      <div className="flex w-full h-full lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
         <div role="status">
           <svg
             aria-hidden="true"

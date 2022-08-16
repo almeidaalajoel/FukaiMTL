@@ -38,9 +38,9 @@ export default function About() {
   );
 
   return (
-    <div className="flex flex-col items-center h-full">
-      <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4 pb-16">
-        <h1>About</h1>
+    <div className="flex flex-col items-center h-full dark:bg-black">
+      <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4 pb-16 dark:bg-[rgb(21,19,19)] dark:text-white">
+        <h1 className="dark:text-gray-300">About</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
         <div className="relative w-[17rem] select-none">
           <Image
