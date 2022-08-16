@@ -217,7 +217,9 @@ table {
 } */
 
 #__next {
-  height: 101%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 sup {
