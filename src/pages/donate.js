@@ -17,10 +17,10 @@ export default function Donate() {
         </div>
         <p className="px-8 sm:px-10 md:px-14 lg:px-20 space-y-4 font-[ProximaNova] text-lg dark:text-white">
           Any donations help to maintain the site, and they show me that people
-          appreciate the work I'm doing. Of course, only donate if it's within
-          your means, and I would love to hear any kind comments or suggestions
-          you have as an alternate way to show your support and let me know
-          people enjoy the website.
+          appreciate the work I&apos;m doing. Of course, only donate if
+          it&apos;s within your means, and I would love to hear any kind
+          comments or suggestions you have as an alternate way to show your
+          support and let me know people enjoy the website.
         </p>
       </div>
     </div>
