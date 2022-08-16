@@ -1,7 +1,7 @@
 import "../globals.css";
 import { Layout } from "../components";
 import Script from "next/script";
-import { useEffect, useState, Fragment } from "react";
+import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [dark, setDark] = useState(false);
@@ -17,7 +17,13 @@ function MyApp({ Component, pageProps }) {
     }
   }, [dark]);
   return (
-    <div className={dark === "true" ? "dark h-full" : "h-full"}>
+    <div
+      className={
+        dark === "true"
+          ? "dark flex-grow flex flex-col"
+          : "flex flex-col flex-grow"
+      }
+    >
       <Layout setDark={setDark} dark={dark}>
         <Component {...pageProps} />
       </Layout>

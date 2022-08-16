@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(46, 51, 59);
+  font-family: "ProximaNova";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  height: 6vh;
+}
+
+.hiddenText {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.logo {
+  display: flex;
+  flex: 1;
+  margin-left: 1vw;
+}
+
+.linkText {
+  color: white;
+  text-decoration: none;
+}

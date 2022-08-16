@@ -156,7 +156,6 @@ section {
 body {
   line-height: 1;
   height: 100%;
-  background-color: rgb(230, 230, 230);
 }
 html {
   overflow-y: scroll;

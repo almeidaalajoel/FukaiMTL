@@ -72,10 +72,6 @@ export default function TileasWorries() {
   const firstCh = 37;
   const lastCh = 39;
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
   useEffect(() => {
     if (!router.isReady) return;
     setCurrentCh(parseInt(page.slice(-2)));
@@ -197,9 +193,9 @@ export default function TileasWorries() {
       </div>
     </div>
   ) : (
-    <div className="h-full bg-white dark:bg-black">
-      <div className="h-full lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white lg:border-gray-300 mx-auto">
-        <div role="status" className="flex h-full justify-center items-center">
+    <div className="flex flex-col flex-grow w-full items-center dark:bg-black">
+      <div className="flex flex-col w-full flex-grow lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
+        <div role="status">
           <svg
             aria-hidden="true"
             className="mr-2 w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
