@@ -156,6 +156,7 @@ section {
 body {
   line-height: 1;
   height: 100%;
+  background-color: rgb(230, 230, 230);
 }
 html {
   overflow-y: scroll;
@@ -216,18 +217,7 @@ table {
 } */
 
 #__next {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-html {
-  height: 100%;
-  background-color: rgb(230, 230, 230);
-}
-
-body {
-  height: 100%;
+  height: 101%;
 }
 
 sup {
