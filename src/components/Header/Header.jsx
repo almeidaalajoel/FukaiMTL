@@ -15,12 +15,12 @@ export default function Header({ setDark, dark }) {
           <a>FukaiMTL</a>
         </Link>
       </span>
-      <span className="flex flex-1 justify-center ml-9">
+      <span className="flex flex-1 justify-center lg:justify-start ml-9">
         <Link href="/about">
           <a>About/Contact</a>
         </Link>
       </span>
-      <span className="flex flex-1 justify-end lg:justify-center pr-6">
+      <span className="flex flex-1 justify-end lg:justify-start pr-6">
         <Link href="/donate">
           <a>Donate</a>
         </Link>
