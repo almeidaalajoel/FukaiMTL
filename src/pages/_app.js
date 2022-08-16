@@ -7,9 +7,15 @@ function MyApp({ Component, pageProps }) {
   const [dark, setDark] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setDark(localStorage.getItem("dark"));
+      const isDark = localStorage.getItem("dark");
+      setDark(isDark);
+      if (isDark === "true") {
+        document.body.style.backgroundColor = "rgb(23,21,21)";
+      } else {
+        document.body.style.backgroundColor = "rgb(255,255,255)";
+      }
     }
-  }, []);
+  }, [dark]);
   return (
     <div
       className={

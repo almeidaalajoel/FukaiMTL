@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Donate() {
   return (
-    <div className="flex flex-col items-center h-full dark:bg-black">
+    <div className="flex flex-col items-center h-full bg-[rgb(230,230,230)] dark:bg-black">
       <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4 dark:bg-[rgb(21,19,19)]">
         <h1 className="dark:text-gray-300">Donate</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
