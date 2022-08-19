@@ -7,6 +7,8 @@ import Footnote from "./Footnote";
 import Navigation from "./Navigation";
 import Separator from "./Separator";
 import FontSize from "./FontSize";
+import Container from "./Container";
+import InnerContainer from "./InnerContainer";
 
 export {
   Header,
@@ -18,4 +20,6 @@ export {
   Footnote,
   Navigation,
   Separator,
+  Container,
+  InnerContainer,
 };

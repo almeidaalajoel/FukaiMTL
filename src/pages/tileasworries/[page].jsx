@@ -7,6 +7,7 @@ import {
   FontSize,
   Footnote,
   Navigation,
+  Container,
   Separator,
 } from "../../components";
 import { DiscussionEmbed } from "disqus-react";
@@ -128,7 +129,7 @@ export default function TileasWorries() {
   );
 
   return ready ? (
-    <div className="flex flex-col items-center bg-[rgb(230,230,230)] dark:bg-black">
+    <Container>
       <div className="flex flex-grow flex-col w-full lg:w-[60rem] text-[rgb(10,10,10)] bg-white dark:bg-[rgb(23,21,21)] dark:text-[rgb(200,200,200)] p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
         <p className="self-center text-3xl text-[#282c34] dark:text-white select-none">
           Tilea&apos;s Worries
@@ -182,9 +183,9 @@ export default function TileasWorries() {
           }}
         />
       </div>
-    </div>
+    </Container>
   ) : (
-    <div className="flex flex-col flex-grow w-full items-center bg-[rgb(230,230,230)] dark:bg-black">
+    <Container>
       <div className="flex flex-col w-full flex-grow lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
         <div role="status">
           <svg
@@ -206,6 +207,6 @@ export default function TileasWorries() {
           <span className="sr-only">Loading...</span>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }

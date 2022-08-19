@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { TOC } from "../../components";
+import { Container, InnerContainer, TOC } from "../../components";
 
 const TileaTOC = () => {
   const chapters = [
@@ -18,11 +18,15 @@ const TileaTOC = () => {
     },
   ];
   return (
-    <TOC
-      chapters={chapters}
-      image={require("../../assets/TileasWorries/tileasworries1.jpg")}
-      title={"Tilea's Worries"}
-    />
+    <Container>
+      <InnerContainer>
+        <TOC
+          chapters={chapters}
+          image={require("../../assets/TileasWorries/tileasworries1.jpg")}
+          title={"Tilea's Worries"}
+        />
+      </InnerContainer>
+    </Container>
   );
 };
 

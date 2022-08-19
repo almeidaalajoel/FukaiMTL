@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Container, InnerContainer } from "../components";
 
 export default function Donate() {
   return (
-    <div className="flex flex-col items-center h-full bg-[rgb(230,230,230)] dark:bg-black">
-      <div className="flex bg-white flex-grow w-[100vw] flex-col pt-6 items-center lg:w-[70rem] space-y-4 dark:bg-[rgb(21,19,19)]">
+    <Container>
+      <InnerContainer>
         <h1 className="dark:text-gray-300">Donate</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
         <div className="w-2/3 hover:cursor-pointer select-none">
@@ -15,14 +16,14 @@ export default function Donate() {
             </a>
           </Link>
         </div>
-        <p className="px-8 sm:px-10 md:px-14 lg:px-20 space-y-4 font-[ProximaNova] text-lg dark:text-white">
+        <p className="px-8 sm:px-10 md:px-14 lg:px-20 space-y-4 font-[ProximaNova] text-lg">
           Any donations help to maintain the site, and they show me that people
           appreciate the work I&apos;m doing. Of course, only donate if
           it&apos;s within your means, and I would love to hear any kind
           comments or suggestions you have as an alternate way to show your
           support and let me know people enjoy the website.
         </p>
-      </div>
-    </div>
+      </InnerContainer>
+    </Container>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { NovelTile } from "../components";
+import { NovelTile, Container, InnerContainer } from "../components";
 import Markdown from "markdown-to-jsx";
 
 export default function Home() {
@@ -32,8 +32,8 @@ export default function Home() {
   );
 
   return (
-    <div className="flex flex-col items-center h-full bg-[rgb(230,230,230)] dark:bg-black">
-      <div className="flex space-y-4 bg-white w-full flex-col items-center lg:w-[70rem] flex-grow pt-6 dark:bg-[rgb(21,19,19)]">
+    <Container>
+      <InnerContainer>
         <h1 className="dark:text-gray-300">Novels</h1>
         <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
         <div className="flex bg-white w-[100vw] lg:w-[70rem] flex-col items-center select-none dark:bg-[rgb(21,19,19)]">
@@ -45,7 +45,7 @@ export default function Home() {
             image={require("../assets/TileasWorries/tileasworries1.jpg")}
           />
         </div>
-      </div>
-    </div>
+      </InnerContainer>
+    </Container>
   );
 }
