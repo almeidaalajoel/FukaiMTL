@@ -75,28 +75,20 @@ export default function TileasWorries() {
 
   const router = useRouter();
   const { page } = router.query;
+  useEffect(() => {
+    if (!router.isReady) return;
+    setReady(true);
+    setCurrentCh(parseInt(page.slice(-2)));
+    try {
+      const text = require(`../../assets/TileasWorries/chapters/${page}.md`);
+      setChapter(text.default);
+    } catch (e) {
+      setNotFound(true);
+    }
+  }, [router.isReady, page]);
 
   const firstCh = 37;
   const lastCh = 39;
-
-  useEffect(() => {
-    if (!router.isReady) return;
-    setCurrentCh(parseInt(page.slice(-2)));
-    fetch(`../tilea/chapters/${page}.md`)
-      .then((r) => {
-        if (r.status === 404) {
-          setNotFound(true);
-          return 404;
-        }
-        return r.text();
-      })
-      .then((text) => {
-        if (text === 404) return;
-        setNotFound(false);
-        setChapter(text);
-        setReady(true);
-      });
-  }, [router.isReady, page]);
 
   if (notFound) return <ErrorPage statusCode={404} />;
 
