@@ -18,7 +18,9 @@ export default function Container({ children }) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-        <Script>(adsbygoogle = window.adsbygoogle || []).push({});</Script>
+        <Script id="left bar ad">
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </Script>
       </span>
       <div className="flex flex-col items-center">{children}</div>
       <span className="w-[20rem] text-white bg-[rgb(230,230,230)] dark:bg-black">
@@ -35,7 +37,9 @@ export default function Container({ children }) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-        <Script>(adsbygoogle = window.adsbygoogle || []).push({});</Script>
+        <Script id="right bar ad">
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </Script>
       </span>
     </div>
   );
