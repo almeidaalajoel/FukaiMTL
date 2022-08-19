@@ -11,7 +11,7 @@ export default function InnerContainer({ children }) {
         crossorigin="anonymous"
       ></Script>
       <ins
-        class="adsbygoogle"
+        className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-3890555720020555"
         data-ad-slot="1787900138"
