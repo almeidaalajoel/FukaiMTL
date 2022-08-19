@@ -24,46 +24,53 @@ export default function TileasWorries() {
     switch (s) {
       case "xs":
         setFontSize(".75");
-        setLineHeight("1");
+        setLineHeight("1.25");
         break;
       case "s":
         setFontSize(".875");
-        setLineHeight("1.25");
+        setLineHeight("1.5");
         break;
       case "base":
         setFontSize("1");
-        setLineHeight("1.5");
+        setLineHeight("1.75");
         break;
       case "lg":
         setFontSize("1.125");
-        setLineHeight("1.75");
+        setLineHeight("1.85");
         break;
       case "xl":
         setFontSize("1.25");
-        setLineHeight("1.75");
+        setLineHeight("2");
         break;
       case "2xl":
         setFontSize("1.5");
-        setLineHeight("2");
+        setLineHeight("2.25");
         break;
       case "3xl":
         setFontSize("1.875");
-        setLineHeight("2.25");
+        setLineHeight("2.5");
         break;
       case "4xl":
         setFontSize("2.25");
-        setLineHeight("2.5");
+        setLineHeight("2.75");
         break;
     }
   };
+
+  //initially set fontsize variable on pageload based on localstorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       const s = localStorage.getItem("size");
       if (s !== null) {
         setSize(s);
-        getHeight(s);
       } else setSize("xl");
     }
+  }, []);
+
+  //set actual fontsize based on fontsize variable
+  useEffect(() => {
+    const s = localStorage.getItem("size");
+    if (s) getHeight(s);
   }, [size]);
 
   const router = useRouter();
@@ -93,15 +100,7 @@ export default function TileasWorries() {
 
   if (notFound) return <ErrorPage statusCode={404} />;
 
-  const MyP = ({ children, ...props }) => (
-    <>
-      <p className="mb-4">
-        {`${children[0]}`} {children[1]}
-      </p>
-    </>
-  );
-
-  const MyH1 = ({ children, ...props }) => (
+  const MyH1 = ({ children }) => (
     <>
       <span className="text-[larger]">
         <h1 className="text-[larger] leading-tight dark:text-gray-300">
@@ -117,7 +116,7 @@ export default function TileasWorries() {
     </>
   );
 
-  const MyHr = ({ children, ...props }) => (
+  const MyHr = () => (
     <>
       <div className="flex my-10 justify-center">
         <p className="whitespace-pre-wrap">
@@ -138,7 +137,7 @@ export default function TileasWorries() {
 
   return ready ? (
     <div className="flex flex-col items-center bg-[rgb(230,230,230)] dark:bg-black">
-      <div className="flex flex-grow flex-col w-full lg:w-[60rem] bg-white dark:bg-[rgb(23,21,21)] dark:text-white p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
+      <div className="flex flex-grow flex-col w-full lg:w-[60rem] text-[rgb(10,10,10)] bg-white dark:bg-[rgb(23,21,21)] dark:text-[rgb(200,200,200)] p-4 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
         <p className="self-center text-3xl text-[#282c34] dark:text-white select-none">
           Tilea&apos;s Worries
         </p>

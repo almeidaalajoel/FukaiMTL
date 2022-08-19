@@ -1,11 +1,6 @@
 import React from "react";
 
-export default function FontSize({
-  size,
-  setSize,
-  setFontSize,
-  setLineHeight,
-}) {
+export default function FontSize({ size, setSize }) {
   const getSmaller = (s) => {
     switch (s) {
       case "xs":
