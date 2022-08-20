@@ -9,6 +9,7 @@ import Separator from "./Separator";
 import FontSize from "./FontSize";
 import Container from "./Container";
 import InnerContainer from "./InnerContainer";
+import AdBanner from "./AdBanner";
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   Separator,
   Container,
   InnerContainer,
+  AdBanner,
 };

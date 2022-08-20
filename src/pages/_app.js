@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [dark, setDark] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isDark = localStorage.getItem("dark");
