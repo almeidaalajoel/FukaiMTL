@@ -12,7 +12,7 @@ import {
 } from "../../components";
 import { DiscussionEmbed } from "disqus-react";
 
-export default function TileasWorries() {
+export default function TileasWorries({ dark }) {
   const [chapter, setChapter] = useState("");
   const [ready, setReady] = useState(false);
   const [notFound, setNotFound] = useState(false);
@@ -174,6 +174,7 @@ export default function TileasWorries() {
           }
         />
         <DiscussionEmbed
+          theme={dark}
           shortname="fukaimtl"
           config={{
             url: `https://fukai-mtl.vercel.app/tileasworries/${page}`,

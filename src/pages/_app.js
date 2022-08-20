@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
       }
     >
       <Layout setDark={setDark} dark={dark}>
-        <Component {...pageProps} />
+        <Component {...pageProps} dark={dark} />
       </Layout>
     </div>
   );
