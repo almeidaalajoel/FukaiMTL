@@ -17,6 +17,6 @@ export default function AdBanner({ slotId }) {
       data-ad-slot={slotId}
       data-ad-format="auto"
       data-full-width-responsive="true"
-    />
+    ></ins>
   );
 }
