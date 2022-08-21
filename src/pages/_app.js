@@ -6,17 +6,24 @@ import { useEffect, useState } from "react";
 function MyApp({ Component, pageProps }) {
   const [dark, setDark] = useState(false);
 
+  //when dark changes, change body background color
+  useEffect(() => {
+    if (dark === "true") {
+      document.body.style.backgroundColor = "rgb(23,21,21)";
+    } else {
+      document.body.style.backgroundColor = "rgb(255,255,255)";
+    }
+  }, [dark]);
+
+  //set initial theme based on localstorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isDark = localStorage.getItem("dark");
-      setDark(isDark);
-      if (isDark === "true") {
-        document.body.style.backgroundColor = "rgb(23,21,21)";
-      } else {
-        document.body.style.backgroundColor = "rgb(255,255,255)";
-      }
+      if (isDark === null) setDark("false");
+      else setDark(isDark);
     }
-  }, [dark]);
+  }, []);
+
   return (
     <div
       className={

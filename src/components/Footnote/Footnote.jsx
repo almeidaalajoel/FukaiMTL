@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Footnote({ num, note, start, end }) {
   const [showNote, setShowNote] = useState(false);
   return (
-    <p>
+    <div>
       <span>
         {start}
         <sup
@@ -24,6 +24,6 @@ export default function Footnote({ num, note, start, end }) {
         <p>{note}</p>
       </div>
       <span>{end}</span>
-    </p>
+    </div>
   );
 }

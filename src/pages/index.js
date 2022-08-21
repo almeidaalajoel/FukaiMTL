@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { NovelTile, Container, InnerContainer } from "../components";
+import { NovelTile, Container, InnerContainer, Separator } from "../components";
 import Markdown from "markdown-to-jsx";
 
 export default function Home() {
@@ -35,8 +35,8 @@ export default function Home() {
     <Container>
       <InnerContainer>
         <h1 className="dark:text-gray-300">Novels</h1>
-        <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
-        <div className="flex bg-white w-[100vw] lg:w-[70rem] flex-col items-center select-none dark:bg-[rgb(21,19,19)]">
+        <Separator />
+        <div className="flex bg-white w-[100vw] lg:w-full flex-col items-center select-none dark:bg-[rgb(21,19,19)]">
           <NovelTile
             title={`Tilea's Worries`}
             description={tileaDesc}
@@ -44,6 +44,7 @@ export default function Home() {
             author={"里奈使徒"}
             image={require("../assets/TileasWorries/tileasworries1.jpg")}
           />
+          <Separator />
         </div>
       </InnerContainer>
     </Container>

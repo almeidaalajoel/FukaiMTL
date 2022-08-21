@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
-import { Container, InnerContainer } from "../components";
+import { Container, InnerContainer, Separator } from "../components";
 
 export default function About() {
   const text = (
@@ -42,7 +42,7 @@ export default function About() {
     <Container>
       <InnerContainer>
         <h1 className="dark:text-gray-300">About</h1>
-        <div className="w-[70%] lg:w-[54rem] h-[1px] bg-gray-300" />
+        <Separator />
         <div className="relative w-[17rem] select-none">
           <Image
             src={require("../../public/about/bicksy.jpg")}
