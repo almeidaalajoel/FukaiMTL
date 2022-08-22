@@ -152,10 +152,10 @@ export default function TileasWorries({ dark }) {
           options={{
             wrapper: Wrapper,
             overrides: {
-              Footnote: { component: Footnote, props: { size: size } },
-              h1: { component: MyH1 },
-              hr: { component: MyHr },
-              ChLink: { component: ChLink },
+              Footnote: Footnote,
+              h1: MyH1,
+              hr: MyHr,
+              ChLink: ChLink,
             },
           }}
         >
