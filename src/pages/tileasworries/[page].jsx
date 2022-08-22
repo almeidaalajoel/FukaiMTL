@@ -110,13 +110,11 @@ export default function TileasWorries({ dark }) {
   );
 
   const MyHr = () => (
-    <>
-      <div className="flex my-10 justify-center">
-        <p className="whitespace-pre-wrap">
-          {"*           *           *           *           *"}
-        </p>
-      </div>
-    </>
+    <div className="flex justify-center">
+      <p className="whitespace-pre-wrap">
+        {"*           *           *           *           *"}
+      </p>
+    </div>
   );
 
   const Wrapper = ({ children }) => (
