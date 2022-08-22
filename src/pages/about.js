@@ -45,7 +45,7 @@ export default function About() {
         <Separator />
         <div className="relative w-[17rem] select-none">
           <Image
-            src={require("../../public/about/bicksy.jpg")}
+            src={require("../assets/about/bicksy.jpg")}
             alt="bicksy"
             className="max-h-full max-w-full"
           />

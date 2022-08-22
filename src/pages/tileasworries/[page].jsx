@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Markdown, { compiler } from "markdown-to-jsx";
 import ErrorPage from "next/error";
@@ -17,6 +17,7 @@ export default function TileasWorries({ dark }) {
   const [ready, setReady] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [currentCh, setCurrentCh] = useState(0);
+  const footnotes = useRef({});
 
   const [size, setSize] = useState(null);
   const [fontSize, setFontSize] = useState("1.25");
@@ -80,6 +81,7 @@ export default function TileasWorries({ dark }) {
     if (!router.isReady) return;
     setReady(true);
     setCurrentCh(parseInt(page.slice(-2)));
+    footnotes.current = {};
     try {
       const text = require(`../../assets/TileasWorries/chapters/${page}.md`);
       setChapter(text.default);
@@ -152,7 +154,10 @@ export default function TileasWorries({ dark }) {
           options={{
             wrapper: Wrapper,
             overrides: {
-              Footnote: Footnote,
+              Footnote: {
+                component: Footnote,
+                props: { footnotes: footnotes },
+              },
               h1: MyH1,
               hr: MyHr,
               ChLink: ChLink,
@@ -185,7 +190,7 @@ export default function TileasWorries({ dark }) {
     </Container>
   ) : (
     <Container>
-      <div className="flex flex-col w-full flex-grow lg:w-[60rem] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
+      <div className="flex flex-col w-full flex-grow lg:w-[65%] xl:w-[53%] dark:bg-[rgb(23,21,21)] bg-white items-center justify-center border-gray-300">
         <div role="status">
           <svg
             aria-hidden="true"

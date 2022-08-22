@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Footnote({ num, note, start, end }) {
-  const [showNote, setShowNote] = useState(false);
+export default function Footnote({ num, note, start, end, footnotes }) {
+  const [showNote, setShowNote] = useState(
+    footnotes.current[num] ? true : false
+  );
+  useEffect(() => {
+    footnotes.current[num] = showNote;
+  }, [showNote]);
   return (
     <div>
       <span>
