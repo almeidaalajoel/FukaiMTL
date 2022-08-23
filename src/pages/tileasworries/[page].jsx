@@ -160,7 +160,6 @@ export default function TileasWorries({ dark }) {
               },
               h1: MyH1,
               hr: MyHr,
-              ChLink: ChLink,
             },
           }}
         >
