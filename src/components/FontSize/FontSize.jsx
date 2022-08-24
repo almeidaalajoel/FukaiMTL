@@ -81,8 +81,8 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => smaller(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer dark:stroke-gray-300 select-none ${
-            size === "xs" ? "dark:stroke-gray-700" : ""
+          className={`h-7 w-7 hover:cursor-pointer select-none ${
+            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300"
           }`}
           fill="none"
           color={size === "xs" ? "gray" : "black"}
@@ -113,8 +113,8 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => bigger(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer dark:stroke-gray-300 select-none ${
-            size === "4xl" ? "dark:stroke-gray-700" : ""
+          className={`h-7 w-7 hover:cursor-pointer select-none ${
+            size === "4xl" ? "dark:stroke-gray-700" : "dark:stroke-gray-300"
           }`}
           fill="none"
           color={size === "4xl" ? "gray" : "black"}
