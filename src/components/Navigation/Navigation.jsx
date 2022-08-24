@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Navigation({ TOClink, prevURL, nextURL }) {
   const nextPrev =
-    "flex px-4 border-solid border-4 border-[rgb(70,70,70)] hover:border-black hover:text-black dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(28,25,25)] w-1/4 h-[3rem] rounded-2xl items-center justify-center select-none hover:cursor-pointer";
+    "flex px-4 lg:px-6 py-2 border-solid border-4 border-[rgb(70,70,70)] hover:border-black hover:text-black dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(28,25,25)] rounded-2xl items-center justify-center select-none hover:cursor-pointer";
 
   const noNextPrev =
-    "flex px-4 border-solid border-4 border-[rgb(180,180,180)] text-[rgb(180,180,180)] dark:border-gray-700 dark:text-gray-700  w-1/4 h-[3rem] rounded-2xl items-center justify-center select-none";
+    "flex px-4 lg:px-6 py-2 border-solid border-4 border-[rgb(180,180,180)] text-[rgb(180,180,180)] dark:border-gray-700 dark:text-gray-700 rounded-2xl items-center justify-center select-none";
 
   const prevInnards = (
     <>
@@ -49,7 +49,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
   );
 
   return (
-    <div className="flex w-2/3 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-lg font-bold font-['ProximaNova']">
+    <div className="flex w-full md:w-4/5 lg:w-3/4 xl:w-3/5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-lg font-bold font-['ProximaNova']">
       {prevURL === "no" ? (
         <div className={noNextPrev}>{prevInnards}</div>
       ) : (
@@ -58,7 +58,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
         </Link>
       )}
       <Link href="/tileasworries">
-        <div className="flex border-solid border-4 border-[rgb(70,70,70)] hover:border-black hover:bg-[rgb(250,250,250)] dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(28,25,25)] w-[20%] h-[3rem] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
+        <div className="flex px-4 py-2 border-solid border-4 border-[rgb(70,70,70)] hover:border-black hover:bg-[rgb(250,250,250)] dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(28,25,25)] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
           TOC
         </div>
       </Link>
