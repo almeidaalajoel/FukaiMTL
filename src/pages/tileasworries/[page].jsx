@@ -14,7 +14,7 @@ export default function TileasWorries({ dark }) {
   const selectRef = useRef();
   const footnotes = useRef();
 
-  const [font, setFont] = useState("Bookerly");
+  const [font, setFont] = useState("serif");
   const [size, setSize] = useState("xl");
   const [fontSize, setFontSize] = useState("1.25");
   const [lineHeight, setLineHeight] = useState("1.75");
@@ -61,7 +61,7 @@ export default function TileasWorries({ dark }) {
       const s = localStorage.getItem("font");
       if (s !== null) {
         setFont(s);
-      } else setFont("Bookerly");
+      } else setFont("serif");
     }
   }, []);
 
@@ -103,15 +103,14 @@ export default function TileasWorries({ dark }) {
 
   //Settings for Select component
   const options = [
-    { value: "Bookerly", label: "Bookerly", font: "Bookerly" },
-    { value: "serif", label: "Serif", font: "serif" },
-    { value: "sans", label: "Sans", font: "sans" },
+    { value: "serif", label: "Serif" },
+    { value: "sans", label: "Sans" },
+    { value: "mono", label: "Mono" },
+    { value: "Bookerly", label: "Bookerly" },
     {
       value: "ProximaNova",
       label: "Proxima Nova",
-      font: "ProximaNova",
     },
-    { value: "mono", label: "Mono", font: "mono" },
   ];
   const selectorStyles = {
     menu: (provided, state) => ({
@@ -124,9 +123,10 @@ export default function TileasWorries({ dark }) {
       width: "12rem",
       fontFamily: font,
     }),
-    option: (provided, { data: { font } }) => ({
+    option: (provided, { data: { value } }) => ({
       ...provided,
-      fontFamily: font,
+      fontFamily: value,
+      backgroundColor: "red",
     }),
   };
   const handleChange = ({ value }) => {
@@ -194,6 +194,7 @@ export default function TileasWorries({ dark }) {
             name="Font"
             options={options}
             onChange={handleChange}
+            filterOption={(option) => option.value !== font}
             isSearchable={false}
           />
         </div>
