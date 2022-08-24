@@ -134,6 +134,12 @@ export default function TileasWorries({ dark }) {
         <p className="self-center text-3xl text-[#282c34] dark:text-white select-none">
           Tilea&apos;s Worries
         </p>
+        <FontSize
+          size={size}
+          setSize={setSize}
+          setFontSize={setFontSize}
+          setLineHeight={setLineHeight}
+        />
         <Navigation
           TOClink="/tileasworries"
           prevURL={
@@ -142,12 +148,6 @@ export default function TileasWorries({ dark }) {
           nextURL={
             currentCh === lastCh ? "no" : `/tileasworries/v3c${currentCh + 1}`
           }
-        />
-        <FontSize
-          size={size}
-          setSize={setSize}
-          setFontSize={setFontSize}
-          setLineHeight={setLineHeight}
         />
         <div className="w-full self-center lg:w-[90%] h-[1px] bg-gray-300" />
         <Markdown
