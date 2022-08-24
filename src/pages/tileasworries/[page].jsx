@@ -4,15 +4,18 @@ import Markdown from "markdown-to-jsx";
 import ErrorPage from "next/error";
 import { FontSize, Footnote, Navigation, Container } from "../../components";
 import { DiscussionEmbed } from "disqus-react";
+import Select from "react-select";
 
 export default function TileasWorries({ dark }) {
   const [chapter, setChapter] = useState("");
   const [ready, setReady] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [currentCh, setCurrentCh] = useState(0);
-  const footnotes = useRef({});
+  const selectRef = useRef();
+  const footnotes = useRef();
 
-  const [size, setSize] = useState(null);
+  const [font, setFont] = useState("Bookerly");
+  const [size, setSize] = useState("xl");
   const [fontSize, setFontSize] = useState("1.25");
   const [lineHeight, setLineHeight] = useState("1.75");
   const getHeight = (s) => {
@@ -52,6 +55,16 @@ export default function TileasWorries({ dark }) {
     }
   };
 
+  //initially set font variable on pageload based on localstorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const s = localStorage.getItem("font");
+      if (s !== null) {
+        setFont(s);
+      } else setFont("Bookerly");
+    }
+  }, []);
+
   //initially set fontsize variable on pageload based on localstorage
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -83,11 +96,47 @@ export default function TileasWorries({ dark }) {
     }
   }, [router.isReady, page]);
 
+  if (notFound) return <ErrorPage statusCode={404} />;
+
   const firstCh = 37;
   const lastCh = 39;
 
-  if (notFound) return <ErrorPage statusCode={404} />;
-
+  //Settings for Select component
+  const options = [
+    { value: "Bookerly", label: "Bookerly", font: "Bookerly" },
+    { value: "serif", label: "Serif", font: "serif" },
+    { value: "sans", label: "Sans", font: "sans" },
+    {
+      value: "ProximaNova",
+      label: "Proxima Nova",
+      font: "ProximaNova",
+    },
+    { value: "mono", label: "Mono", font: "mono" },
+  ];
+  const selectorStyles = {
+    menu: (provided, state) => ({
+      ...provided,
+      width: "max-content",
+      minWidth: "100%",
+    }),
+    control: (provided, state) => ({
+      ...provided,
+      width: "12rem",
+      fontFamily: font,
+    }),
+    option: (provided, { data: { font } }) => ({
+      ...provided,
+      fontFamily: font,
+    }),
+  };
+  const handleChange = ({ value }) => {
+    selectRef.current.blur();
+    if (typeof window !== "undefined") {
+      localStorage.setItem("font", value);
+      setFont(value);
+    }
+  };
+  //Settings for Markdown component
   const MyH1 = ({ children }) => (
     <>
       <span className="text-[larger]">
@@ -103,7 +152,6 @@ export default function TileasWorries({ dark }) {
       </div>
     </>
   );
-
   const MyHr = () => (
     <div className="flex justify-center">
       <p className="whitespace-pre-wrap">
@@ -111,11 +159,14 @@ export default function TileasWorries({ dark }) {
       </p>
     </div>
   );
-
   const Wrapper = ({ children }) => (
     <div
-      className="space-y-4 my-6"
-      style={{ fontSize: `${fontSize}rem`, lineHeight: `${lineHeight}rem` }}
+      className="space-y-4 my-6 font-serif"
+      style={{
+        fontSize: `${fontSize}rem`,
+        lineHeight: `${lineHeight}rem`,
+        fontFamily: font,
+      }}
     >
       {children}
     </div>
@@ -124,15 +175,28 @@ export default function TileasWorries({ dark }) {
   return ready ? (
     <Container>
       <div className="flex flex-grow flex-col w-full lg:w-[65%] xl:w-[53%] text-[rgb(10,10,10)] bg-white dark:bg-[rgb(23,21,21)] dark:text-[rgb(200,200,200)] p-2 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
-        <p className="self-center text-3xl text-[#282c34] dark:text-white select-none ">
+        <p className="self-center text-3xl text-[#282c34] dark:text-white select-none z-[1000]">
           Tilea&apos;s Worries
         </p>
-        <FontSize
-          size={size}
-          setSize={setSize}
-          setFontSize={setFontSize}
-          setLineHeight={setLineHeight}
-        />
+        <div className="flex flex-row items-center w-full md:w-4/5 lg:w-3/4 xl:w-3/5 self-center justify-around">
+          <FontSize
+            size={size}
+            setSize={setSize}
+            setFontSize={setFontSize}
+            setLineHeight={setLineHeight}
+          />
+          <Select
+            ref={selectRef}
+            className="my-react-select-container"
+            classNamePrefix="my-react-select"
+            defaultValue={options.find(({ value }) => value === font)}
+            styles={selectorStyles}
+            name="Font"
+            options={options}
+            onChange={handleChange}
+            isSearchable={false}
+          />
+        </div>
         <Navigation
           TOClink="/tileasworries"
           prevURL={

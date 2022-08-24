@@ -76,7 +76,7 @@ export default function FontSize({ size, setSize }) {
   };
 
   return (
-    <div className="flex mt-4 justify-center items-center">
+    <div className="flex justify-center items-center">
       <span>
         <svg
           onClick={() => smaller(size)}
