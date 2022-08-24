@@ -10,6 +10,10 @@ import FontSize from "./FontSize";
 import Container from "./Container";
 import InnerContainer from "./InnerContainer";
 import AdBanner from "./AdBanner";
+import FontSelector from "./FontSelector";
+import MyMarkdown from "./MyMarkdown";
+import PageLoading from "./PageLoading";
+import ChPage from "./ChPage";
 
 export {
   Header,
@@ -24,4 +28,8 @@ export {
   Container,
   InnerContainer,
   AdBanner,
+  FontSelector,
+  MyMarkdown,
+  PageLoading,
+  ChPage,
 };
