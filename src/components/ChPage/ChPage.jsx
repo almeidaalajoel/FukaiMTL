@@ -1,5 +1,11 @@
 import React from "react";
-import { Navigation, MyMarkdown, FontSize, FontSelector } from "..";
+import {
+  Navigation,
+  MyMarkdown,
+  FontSize,
+  FontSelector,
+  PageSeparator,
+} from "..";
 import { DiscussionEmbed } from "disqus-react";
 
 export default function ChPage({
@@ -41,7 +47,7 @@ export default function ChPage({
         prevURL={currentCh === firstCh ? "no" : `${path}${currentCh - 1}`}
         nextURL={currentCh === lastCh ? "no" : `${path}${currentCh + 1}`}
       />
-      <div className="w-full self-center lg:w-[90%] h-[1px] bg-gray-300" />
+      <PageSeparator />
       <MyMarkdown
         fontSize={fontSize}
         lineHeight={lineHeight}
@@ -50,7 +56,7 @@ export default function ChPage({
       >
         {chapter}
       </MyMarkdown>
-      <div className="w-full self-center lg:w-[90%] h-[1px] bg-gray-300" />
+      <PageSeparator />
       <Navigation
         TOClink={`/${novel}`}
         prevURL={currentCh === firstCh ? "no" : `${path}${currentCh - 1}`}

@@ -1,6 +1,7 @@
 import React from "react";
 import Markdown from "markdown-to-jsx";
-import { Footnote } from "..";
+import { Footnote, TranslatorNote, ChapterHeader } from "..";
+import Link from "next/link";
 
 export default function MyMarkdown({
   fontSize,
@@ -33,7 +34,7 @@ export default function MyMarkdown({
   );
   const Wrapper = ({ children }) => (
     <div
-      className="space-y-4 my-6 font-serif"
+      className="flex flex-col space-y-4 my-6"
       style={{
         fontSize: `${fontSize}rem`,
         lineHeight: `${lineHeight}rem`,
@@ -43,6 +44,11 @@ export default function MyMarkdown({
       {children}
     </div>
   );
+
+  const MyLink = (props) => {
+    return <Link {...props} children={props.children[0]} />;
+  };
+
   return (
     <Markdown
       options={{
@@ -52,8 +58,11 @@ export default function MyMarkdown({
             component: Footnote,
             props: { footnotes: footnotes },
           },
+          TranslatorNote: TranslatorNote,
           h1: MyH1,
           hr: MyHr,
+          ChapterHeader: ChapterHeader,
+          Link: MyLink,
         },
       }}
     >
