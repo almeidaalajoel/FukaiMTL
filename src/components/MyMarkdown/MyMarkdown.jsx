@@ -46,7 +46,7 @@ export default function MyMarkdown({
   );
 
   const MyLink = (props) => {
-    return <Link {...props} children={props.children[0]} />;
+    return <Link {...props}>{props.children[0]}</Link>;
   };
 
   return (
