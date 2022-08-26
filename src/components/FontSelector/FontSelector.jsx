@@ -4,14 +4,15 @@ import Select from "react-select";
 export default function FontSelector({ font, setFont }) {
   const selectRef = useRef();
   const options = [
-    { value: "serif", label: "Serif" },
-    { value: "sans", label: "Sans" },
-    { value: "mono", label: "Mono" },
+    { value: "Georgia", label: "Georgia" },
     { value: "Bookerly", label: "Bookerly" },
     {
       value: "ProximaNova",
       label: "Proxima Nova",
     },
+    { value: "Roboto", label: "Roboto" },
+    { value: "SFMono", label: "SF Mono" },
+    { value: "Courier", label: "Courier" },
   ];
   const selectorStyles = {
     menu: (provided, state) => ({

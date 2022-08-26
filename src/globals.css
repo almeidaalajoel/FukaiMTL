@@ -71,12 +71,32 @@
 
 @font-face {
   font-family: "ProximaNova";
-  src: url("./assets/Fonts/ProximaNova/ProximaNovaRegular.otf");
+  src: url("./assets/Fonts/ProximaNovaRegular.otf");
 }
 
 @font-face {
   font-family: "Bookerly";
-  src: url("./assets/Fonts/Bookerly/Bookerly.ttf");
+  src: url("./assets/Fonts/Bookerly.ttf");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("./assets/Fonts/Georgia.ttf");
+}
+
+@font-face {
+  font-family: "Courier";
+  src: url("./assets/Fonts/Courier.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Fonts/Roboto.ttf");
+}
+
+@font-face {
+  font-family: "SFMono";
+  src: url("./assets/Fonts/SFMono.otf");
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

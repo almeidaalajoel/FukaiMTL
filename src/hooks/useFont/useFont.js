@@ -11,7 +11,7 @@ export default function useFont() {
     const s = localStorage.getItem("font");
     if (s !== null) {
       setFont(s);
-    } else setFont("serif");
+    } else setFont("Georgia");
   }, []);
 
   //initially set fontsize variable on pageload based on localstorage
