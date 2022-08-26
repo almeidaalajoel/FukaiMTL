@@ -28,7 +28,6 @@ export default function FontSelector({ font, setFont }) {
     option: (provided, { data: { value } }) => ({
       ...provided,
       fontFamily: value,
-      backgroundColor: "red",
     }),
   };
   const handleChange = ({ value }) => {
