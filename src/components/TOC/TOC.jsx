@@ -7,14 +7,6 @@ export default function TOC({ image, title, chapters }) {
   return (
     <div className="flex flex-col items-center p-6 w-full">
       <div className="flex flex-col items-center justify-evenly p-3 border-2 border-solid bg-[rgb(230,240,240)] border-black rounded-xl mb-5 sm:mb-0 sm:mr-4">
-        <div className="w-[16rem] relative mb-3 select-none">
-          <Image
-            src={image}
-            alt={""}
-            layout="responsive"
-            className="max-h-full max-w-full rounded-xl"
-          />
-        </div>
         <p className=" text-[1.75rem] text-[#282c34]">{title}</p>
       </div>
       <Separator />
@@ -26,6 +18,17 @@ export default function TOC({ image, title, chapters }) {
           <ChLink name={ch.name} link={ch.link} key={i} />
         ))}
       </ul>
+      <div className="h-10 w-10 bg-lime-500"/>
+      <div className="w-full h-full bg-red-700 mb-3 select-none">
+          wtf is this
+      </div>
     </div>
   );
 }
+
+    /* <Image
+            src={image}
+            alt={""}
+            layout="fill"
+            className="max-w-full max-h-full rounded-xl"
+          /> */
