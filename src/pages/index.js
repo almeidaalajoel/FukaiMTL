@@ -3,7 +3,7 @@ import { NovelTile, Container, InnerContainer, Separator } from "../components";
 
 export default function Home() {
   const tileaDesc = (
-    <div className="space-y-4 px-8 sm:px-10 md:px-14 lg:px-20">
+    <div className="space-y-4">
       <p>
         With the progression of his Chuuni Disease, Shioda Tetsuya is shunned by
         his family, and dies in despair. He vowed that if he was born again,
