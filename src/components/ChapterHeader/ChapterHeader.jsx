@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ChapterHeader({ translator, proofreader, children }) {
+export default function ChapterHeader({ translator, proofreader, date, children }) {
   return (
     <React.Fragment>
       <span className="text-[larger]">
@@ -13,6 +13,8 @@ export default function ChapterHeader({ translator, proofreader, children }) {
           <strong>Translator</strong>: {translator}
           {"    "}|{"    "}
           <strong>Proofreader</strong>: {proofreader}
+          {"    "}|{"    "}
+          <strong>Posted</strong>: {date}
         </p>
       </div>
     </React.Fragment>

@@ -22,7 +22,7 @@ export default function About() {
       </p>
       <p>
         I wrote the code for this site myself, and I haven&apos;t done extensive
-        testing across different target devices, so if anything looks funky or
+        testing across different devices, so if anything looks funky or
         doesn&apos;t work, don&apos;t hesitate to shoot me a message. If
         you&apos;re using a screen reader and you&apos;re having any issues,
         please message me! I don&apos;t want anyone to have a hard time using

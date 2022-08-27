@@ -30,10 +30,11 @@ export default function ChPage({
 }) {
   return (
     <React.Fragment>
-      <p className="self-center text-3xl text-[#282c34] dark:text-white select-none z-[1000]">
+      <p className="self-center text-3xl font-bold font-['ProximaNova'] text-[#282c34] dark:text-white mb-5">
         {title}
       </p>
-      <div className="flex flex-row items-center w-full md:w-4/5 lg:w-3/4 xl:w-3/5 self-center justify-around">
+      <PageSeparator />
+      <div className="flex flex-row items-center w-full md:w-4/5 lg:w-3/4 xl:w-3/5 mt-3 self-center justify-around">
         <FontSize
           size={size}
           setSize={setSize}
