@@ -34,8 +34,8 @@ export default function ChPage({
         {title}
       </p>
       {/* <PageSeparator /> */}
-      <div className="flex flex-col self-center items-center w-min px-[.5rem] mdPh:px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[5rem] border-4 bg-[rgb(238,242,242)] dark:bg-[rgb(33,30,30)] shadow-lg border-solid dark:border-white rounded-2xl">
-        <div className="flex flex-col mdPh:flex-row items-center mdPh:space-x-6 sm:space-x-10 mt-3 justify-around">
+      <div className="flex flex-col self-center items-center w-min px-[.5rem] smPh:px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[5rem] border-4 bg-[rgb(238,242,242)] dark:bg-[rgb(33,30,30)] shadow-lg border-solid dark:border-white rounded-2xl">
+        <div className="flex flex-col smPh:flex-row items-center smPh:space-x-6 sm:space-x-10 mt-3 justify-around">
           <FontSize
             size={size}
             setSize={setSize}

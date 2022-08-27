@@ -50,7 +50,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
 
   return (
    <React.Fragment>
-      <div className="flex space-x-3 mdPh:space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-xs smPh:text-sm mdPh:text-base sm:text-lg font-bold font-['ProximaNova']">
+      <div className="flex space-x-3 smPh:space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-xs smPh:text-sm mdPh:text-base sm:text-lg font-bold font-['ProximaNova']">
         {prevURL === "no" ? (
           <div className={noNextPrev}>{prevInnards}</div>
         ) : (
