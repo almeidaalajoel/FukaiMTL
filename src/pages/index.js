@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React from "react";
 import { NovelTile, Container, InnerContainer, Separator } from "../components";
-import Markdown from "markdown-to-jsx";
 
 export default function Home() {
   const tileaDesc = (
-    <div className="space-y-4">
+    <div className="space-y-4 px-8 sm:px-10 md:px-14 lg:px-20">
       <p>
         With the progression of his Chuuni Disease, Shioda Tetsuya is shunned by
         his family, and dies in despair. He vowed that if he was born again,

@@ -81,8 +81,8 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => smaller(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer stroke-[rgb(70,70,70)] dark:hover:stroke-white select-none ${
-            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 hover:stroke-black"
+          className={`h-7 w-7 stroke-[rgb(70,70,70)] select-none ${
+            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 dark:hover:stroke-white hover:stroke-black hover:cursor-pointer"
           }`}
           fill="none"
           viewBox="0 0 24 24"
@@ -112,8 +112,8 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => bigger(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer stroke-[rgb(70,70,70)] dark:hover:stroke-white select-none ${
-            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 hover:stroke-black"
+          className={`h-7 w-7 stroke-[rgb(70,70,70)] select-none ${
+            size === "4xl" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 dark:hover:stroke-white hover:stroke-black hover:cursor-pointer"
           }`}
           fill="none"
           // color={size === "4xl" ? "gray" : "black"}

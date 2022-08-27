@@ -22,7 +22,7 @@ export default function FontSelector({ font, setFont }) {
     }),
     control: (provided, state) => ({
       ...provided,
-      width: "12rem",
+      width: "11.5rem",
       fontFamily: font,
     }),
     option: (provided, { data: { value } }) => ({

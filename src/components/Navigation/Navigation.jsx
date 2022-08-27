@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navigation({ TOClink, prevURL, nextURL }) {
@@ -49,26 +49,28 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
   );
 
   return (
-    <div className="flex space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-lg font-bold font-['ProximaNova']">
-      {prevURL === "no" ? (
-        <div className={noNextPrev}>{prevInnards}</div>
-      ) : (
-        <Link href={prevURL}>
-          <div className={nextPrev}>{prevInnards}</div>
+   <React.Fragment>
+      <div className="flex space-x-3 mdPh:space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-xs smPh:text-sm mdPh:text-base sm:text-lg font-bold font-['ProximaNova']">
+        {prevURL === "no" ? (
+          <div className={noNextPrev}>{prevInnards}</div>
+        ) : (
+          <Link href={prevURL}>
+            <div className={nextPrev}>{prevInnards}</div>
+          </Link>
+        )}
+        <Link href={TOClink}>
+          <div className="flex px-4 py-2 border-solid border-4 border-[rgb(70,70,70)] hover:border-black bg-[rgb(250,250,250)] dark:bg-[rgb(23,21,21)] hover:bg-white dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(31,27,27)] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
+            <p className="h-6 flex items-center">TOC</p>
+          </div>
         </Link>
-      )}
-      <Link href="/tileasworries">
-        <div className="flex px-4 py-2 border-solid border-4 border-[rgb(70,70,70)] hover:border-black bg-[rgb(250,250,250)] dark:bg-[rgb(23,21,21)] hover:bg-white dark:border-gray-300  dark:hover:border-white dark:hover:text-white dark:hover:bg-[rgb(31,27,27)] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
-          TOC
-        </div>
-      </Link>
-      {nextURL === "no" ? (
-        <div className={noNextPrev}>{nextInnards}</div>
-      ) : (
-        <Link href={nextURL}>
-          <div className={nextPrev}>{nextInnards}</div>
-        </Link>
-      )}
-    </div>
+        {nextURL === "no" ? (
+          <div className={noNextPrev}>{nextInnards}</div>
+        ) : (
+          <Link href={nextURL}>
+            <div className={nextPrev}>{nextInnards}</div>
+          </Link>
+        )}
+      </div>
+   </React.Fragment>
   );
 }
