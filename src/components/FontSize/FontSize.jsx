@@ -81,11 +81,10 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => smaller(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer select-none ${
-            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300"
+          className={`h-7 w-7 hover:cursor-pointer stroke-[rgb(70,70,70)] dark:hover:stroke-white select-none ${
+            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 hover:stroke-black"
           }`}
           fill="none"
-          color={size === "xs" ? "gray" : "black"}
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
@@ -99,7 +98,7 @@ export default function FontSize({ size, setSize }) {
       </span>
       <span className="w-[4rem] h-[3.6rem] flex justify-center items-center">
         <svg
-          className="dark:fill-gray-300"
+          className="dark:fill-gray-300 fill-[rgb(70,70,70)]"
           width={`${2 + 0.2 * tSize(size)}rem`}
           height={`${2 + 0.2 * tSize(size)}rem`}
           viewBox="0 0 512 512"
@@ -113,11 +112,11 @@ export default function FontSize({ size, setSize }) {
         <svg
           onClick={() => bigger(size)}
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-7 hover:cursor-pointer select-none ${
-            size === "4xl" ? "dark:stroke-gray-700" : "dark:stroke-gray-300"
+          className={`h-7 w-7 hover:cursor-pointer stroke-[rgb(70,70,70)] dark:hover:stroke-white select-none ${
+            size === "xs" ? "dark:stroke-gray-700" : "dark:stroke-gray-300 hover:stroke-black"
           }`}
           fill="none"
-          color={size === "4xl" ? "gray" : "black"}
+          // color={size === "4xl" ? "gray" : "black"}
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"

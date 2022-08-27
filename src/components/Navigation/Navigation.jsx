@@ -49,7 +49,7 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
   );
 
   return (
-    <div className="flex w-full md:w-4/5 lg:w-3/4 xl:w-3/5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-lg font-bold font-['ProximaNova']">
+    <div className="flex space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-lg font-bold font-['ProximaNova']">
       {prevURL === "no" ? (
         <div className={noNextPrev}>{prevInnards}</div>
       ) : (
