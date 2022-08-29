@@ -33,7 +33,7 @@ export default function ChPage({
       <p className="self-center text-3xl font-bold font-['ProximaNova'] text-[#282c34] dark:text-white mb-5">
         {title}
       </p>
-      <div className="flex flex-col self-center items-center w-min px-[.5rem] smPh:px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[5rem] border-4 bg-[rgb(240,239,242)] dark:bg-[rgb(33,30,30)] shadow-2xl dark:shadow-[0_25px_50px_-12px_rgba(165,160,160,0.2)] border-solid dark:border-white rounded-2xl">
+      <div className="flex flex-col self-center items-center w-min px-[.5rem] smPh:px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[5rem] border-4 bg-[rgb(240,239,242)] dark:bg-[rgb(33,30,30)] shadow-2xl dark:shadow-[0_0px_40px_8px_rgba(165,160,160,0.18)] border-solid dark:border-white rounded-2xl">
         <div className="flex flex-col smPh:flex-row items-center smPh:space-x-6 sm:space-x-10 mt-3 justify-around">
           <FontSize
             size={size}
