@@ -26,10 +26,12 @@ export default function MyMarkdown({
     </>
   );
   const MyHr = () => (
-    <div className="flex justify-center">
-      <p className="whitespace-pre-wrap">
-        {"*           *           *           *           *"}
-      </p>
+    <div className="flex justify-evenly !my-14">
+      <span>*</span>
+      <span>*</span>
+      <span>*</span>
+      <span>*</span>
+      <span>*</span>
     </div>
   );
   const Wrapper = ({ children }) => (
