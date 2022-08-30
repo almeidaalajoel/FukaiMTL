@@ -9,6 +9,8 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
+      canHov: { raw: "(hover: hover)" },
+
       smPh: "390px",
 
       mdPh: "470px",
