@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 
 export default function Navigation({ TOClink, prevURL, nextURL }) {
+  const prevRef = useRef();
+
   const nextPrev =
     "flex px-4 lg:px-6 py-2 border-solid border-4 border-[rgb(70,70,70)] hover:border-black hover:text-black dark:bg-[rgb(23,21,21)] dark:border-gray-300  dark:hover:border-white dark:hover:text-white bg-[rgb(250,250,250)] hover:bg-white dark:hover:bg-[rgb(31,27,27)] rounded-2xl items-center justify-center select-none hover:cursor-pointer";
 
@@ -49,12 +51,12 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
   );
 
   return (
-   <React.Fragment>
+    <React.Fragment>
       <div className="flex space-x-3 smPh:space-x-5 items-center self-center justify-around my-5 text-[rgb(70,70,70)] dark:text-gray-300 text-xs smPh:text-sm mdPh:text-base sm:text-lg font-bold font-['ProximaNova']">
         {prevURL === "no" ? (
           <div className={noNextPrev}>{prevInnards}</div>
         ) : (
-          <Link href={prevURL}>
+          <Link ref={prevRef} onClick={prevRef.current.blur()} href={prevURL}>
             <div className={nextPrev}>{prevInnards}</div>
           </Link>
         )}
@@ -71,6 +73,6 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
           </Link>
         )}
       </div>
-   </React.Fragment>
+    </React.Fragment>
   );
 }
