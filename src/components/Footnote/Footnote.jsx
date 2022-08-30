@@ -4,6 +4,10 @@ export default function Footnote({ num, note, start, end, footnotes }) {
   const [showNote, setShowNote] = useState(
     footnotes.current[num] ? true : false
   );
+
+  //footnotes stores state of all footnotes of a page
+  //footnotes = {[num]: true/false} (plus other footnote numbers)
+  //update footnotes whenever the components state changes
   useEffect(() => {
     footnotes.current[num] = showNote;
   }, [showNote]);
@@ -13,7 +17,7 @@ export default function Footnote({ num, note, start, end, footnotes }) {
         {start}
         <sup
           onClick={() => setShowNote(!showNote)}
-          className="text-blue-700 hover:underline hover:cursor-pointer select-none"
+          className="text-blue-700 lgPh:hover:underline hover:cursor-pointer select-none"
         >
           {num}
         </sup>{" "}

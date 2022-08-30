@@ -84,7 +84,7 @@ export default function FontSize({ size, setSize }) {
           className={`h-7 w-7 select-none ${
             size === "xs"
               ? "stroke-[#808080] dark:stroke-gray-700"
-              : "stroke-[rgb(70,70,70)] dark:stroke-gray-300 dark:hover:stroke-white hover:stroke-black hover:cursor-pointer"
+              : "stroke-[rgb(70,70,70)] dark:stroke-gray-300 dark:lgPh:hover:stroke-white lgPh:hover:stroke-black hover:cursor-pointer"
           }`}
           fill="none"
           viewBox="0 0 24 24"
@@ -117,7 +117,7 @@ export default function FontSize({ size, setSize }) {
           className={`h-7 w-7 select-none ${
             size === "4xl"
               ? "stroke-[#808080] dark:stroke-gray-700"
-              : "stroke-[rgb(70,70,70)] dark:stroke-gray-300 dark:hover:stroke-white hover:stroke-black hover:cursor-pointer"
+              : "stroke-[rgb(70,70,70)] dark:stroke-gray-300 dark:lgPh:hover:stroke-white lgPh:hover:stroke-black hover:cursor-pointer"
           }`}
           fill="none"
           // color={size === "4xl" ? "gray" : "black"}
