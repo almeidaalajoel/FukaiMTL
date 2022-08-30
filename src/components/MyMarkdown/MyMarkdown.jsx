@@ -36,7 +36,7 @@ export default function MyMarkdown({
   );
   const Wrapper = ({ children }) => (
     <div
-      className="flex flex-col space-y-4 my-6"
+      className="flex flex-col space-y-4 my-6 break-words"
       style={{
         fontSize: `${fontSize}rem`,
         lineHeight: `${lineHeight}rem`,

@@ -23,7 +23,10 @@ export default function Reader() {
     setValue(e.target.value);
   };
 
-  const handleClick = () => setText(formatStr(value));
+  const handleClick = () => {
+    setText(formatStr(value));
+    window.scrollTo(0, 0);
+  };
   const handleReset = () => {
     setText("");
     setValue("");
