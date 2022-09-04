@@ -12,7 +12,6 @@ export default function FontSelector({ font, setFont }) {
     },
     { value: "Roboto", label: "Roboto" },
     { value: "SFMono", label: "SF Mono" },
-    { value: "Courier", label: "Courier" },
   ];
   const selectorStyles = {
     menu: (provided) => ({

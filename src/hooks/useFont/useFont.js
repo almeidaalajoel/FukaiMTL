@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function useFont() {
-  const [font, setFont] = useState("");
+  const [font, setFont] = useState("Georgia");
   const [size, setSize] = useState("xl");
   const [fontSize, setFontSize] = useState("1.25");
   const [lineHeight, setLineHeight] = useState("1.75");
