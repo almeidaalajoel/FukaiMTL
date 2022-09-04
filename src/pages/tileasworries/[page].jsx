@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
 import ErrorPage from "next/error";
 import { Container, PageLoading, ChPage } from "../../components";
 import { useChapter, useFont } from "../../hooks";
