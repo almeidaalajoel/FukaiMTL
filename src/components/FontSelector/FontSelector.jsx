@@ -43,10 +43,7 @@ export default function FontSelector({ font, setFont }) {
       ref={selectRef}
       className="my-react-select-container"
       classNamePrefix="my-react-select"
-      defaultValue={options.find(({ value }) => {
-        console.log(font, value);
-        return value === font;
-      })}
+      value={options.find(({ value }) => value === font)}
       instanceId={useId()}
       styles={selectorStyles}
       name="Font"
