@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
+import bicksy from "../assets/about/bicksy.jpg";
 import { Container, InnerContainer, Separator } from "../components";
 
-export default function About() {
+export default function About({ image }) {
   const text = (
     <div className="px-8 sm:px-10 md:px-14 lg:px-20 space-y-4 font-[ProximaNova] text-lg">
       <p>
@@ -44,11 +45,7 @@ export default function About() {
         <h1 className="dark:text-gray-300">About</h1>
         <Separator />
         <div className="relative w-[17rem] select-none">
-          <Image
-            src={require("../assets/about/bicksy.jpg")}
-            alt="bicksy"
-            className="max-h-full max-w-full"
-          />
+          <Image src={bicksy} alt="bicksy" className="max-h-full max-w-full" />
         </div>
         {text}
       </InnerContainer>

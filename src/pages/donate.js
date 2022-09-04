@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import donate from "../assets/kofi.png";
 import { Container, InnerContainer, Separator } from "../components";
 
 export default function Donate() {
@@ -12,7 +13,7 @@ export default function Donate() {
         <div className="w-2/3 hover:cursor-pointer select-none">
           <Link href={"https://ko-fi.com/fukaimtl"}>
             <a>
-              <Image src={require("../assets/kofi.png")} alt="ko-fi" />
+              <Image src={donate} alt="ko-fi" />
             </a>
           </Link>
         </div>
