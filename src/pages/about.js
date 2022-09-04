@@ -45,7 +45,12 @@ export default function About({ image }) {
         <h1 className="dark:text-gray-300">About</h1>
         <Separator />
         <div className="relative w-[17rem] select-none">
-          <Image src={bicksy} alt="bicksy" className="max-h-full max-w-full" />
+          <Image
+            src={bicksy}
+            alt="bicksy"
+            className="max-h-full max-w-full"
+            priority
+          />
         </div>
         {text}
       </InnerContainer>
