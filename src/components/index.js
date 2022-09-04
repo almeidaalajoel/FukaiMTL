@@ -14,6 +14,7 @@ import FontSelector from "./FontSelector";
 import MyMarkdown from "./MyMarkdown";
 import PageLoading from "./PageLoading";
 import ChPage from "./ChPage";
+import Chapter from "./Chapter";
 import PageSeparator from "./PageSeparator";
 import TranslatorNote from "./TranslatorNote";
 import ChapterHeader from "./ChapterHeader";
@@ -35,6 +36,7 @@ export {
   MyMarkdown,
   PageLoading,
   ChPage,
+  Chapter,
   PageSeparator,
   TranslatorNote,
   ChapterHeader,

@@ -4,7 +4,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState("false");
 
   //when dark changes, change body background color
   useEffect(() => {

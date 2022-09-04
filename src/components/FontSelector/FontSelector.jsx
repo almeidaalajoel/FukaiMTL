@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useId } from "react";
 import Select from "react-select";
 
 export default function FontSelector({ font, setFont }) {
@@ -15,12 +15,12 @@ export default function FontSelector({ font, setFont }) {
     { value: "Courier", label: "Courier" },
   ];
   const selectorStyles = {
-    menu: (provided, state) => ({
+    menu: (provided) => ({
       ...provided,
       width: "max-content",
       minWidth: "100%",
     }),
-    control: (provided, state) => ({
+    control: (provided) => ({
       ...provided,
       width: "11.5rem",
       fontFamily: font,
@@ -43,7 +43,11 @@ export default function FontSelector({ font, setFont }) {
       ref={selectRef}
       className="my-react-select-container"
       classNamePrefix="my-react-select"
-      defaultValue={options.find(({ value }) => value === font)}
+      defaultValue={options.find(({ value }) => {
+        console.log(font, value);
+        return value === font;
+      })}
+      instanceId={useId()}
       styles={selectorStyles}
       name="Font"
       options={options}

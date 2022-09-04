@@ -1,8 +1,40 @@
-import ErrorPage from "next/error";
-import { Container, PageLoading, ChPage } from "../../components";
-import { useChapter, useFont } from "../../hooks";
+import React, { useRef, useEffect } from "react";
+import { Container, ChPage, Chapter } from "../../components";
+import { useFont } from "../../hooks";
 
-export default function TileasWorries({ dark }) {
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { page: "v3c37" } },
+      { params: { page: "v3c38" } },
+      { params: { page: "v3c39" } },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const { page } = context.params;
+  const firstCh = 37;
+  const lastCh = 39;
+  const currentCh = parseInt(page.slice(-2));
+  try {
+    const chapterText =
+      require(`../../assets/TileasWorries/chapters/${page}.md`).default;
+    return { props: { chapterText, firstCh, lastCh, currentCh, page } };
+  } catch {
+    return { notFound: true };
+  }
+}
+
+export default function TileasWorries({
+  dark,
+  firstCh,
+  lastCh,
+  currentCh,
+  chapterText,
+  page,
+}) {
   const [
     font,
     size,
@@ -13,20 +45,17 @@ export default function TileasWorries({ dark }) {
     setFontSize,
     setLineHeight,
   ] = useFont();
-  const [currentCh, chapter, footnotes, page] = useChapter(
-    "TileasWorries",
-    (p) => parseInt(p.slice(-2))
-  );
 
-  if (chapter === "not found") return <ErrorPage statusCode={404} />;
+  const footnotes = useRef({});
+  //reset state of footnotes when page changes
+  useEffect(() => {
+    footnotes.current = {};
+  }, [page]);
 
-  const firstCh = 37;
-  const lastCh = 39;
-
-  return chapter ? (
+  return (
     <Container>
-      <div className="flex flex-grow flex-col w-full lg:w-[65%] xl:w-[53%] text-[rgb(10,10,10)] bg-white dark:bg-[rgb(23,21,21)] dark:text-[rgb(200,200,200)] p-2 lg:p-12 lg:pt-6 leading-7 text-xl border border-solid border-gray-300 dark:border-gray-900">
-        <ChPage
+      <ChPage>
+        <Chapter
           {...{
             size,
             setSize,
@@ -40,7 +69,7 @@ export default function TileasWorries({ dark }) {
             currentCh,
             firstCh,
             lastCh,
-            chapter,
+            chapterText,
             page,
             dark,
           }}
@@ -48,9 +77,7 @@ export default function TileasWorries({ dark }) {
           path="/tileasworries/v3c"
           novel="tileasworries"
         />
-      </div>
+      </ChPage>
     </Container>
-  ) : (
-    <PageLoading />
   );
 }
