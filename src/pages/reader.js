@@ -74,7 +74,11 @@ export default function Reader() {
                 minRows={15}
                 onChange={handleChange}
                 value={value}
-                style={{ border: "solid" }}
+                style={{
+                  border: "none",
+                  background: "rgb(20, 20, 20)",
+                  color: "rgb(150, 150, 150)",
+                }}
               />
             </div>
             <div
