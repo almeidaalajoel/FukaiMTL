@@ -5,7 +5,9 @@ export default function TranslatorNote({ children }) {
   return (
     <React.Fragment>
       <div className="px-4 self-center lg:w-[90%]">
-        <p>{children}</p>
+        <p>
+          <em>{children}</em>
+        </p>
       </div>
       <PageSeparator />
     </React.Fragment>
