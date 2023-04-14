@@ -55,19 +55,19 @@ export default function Navigation({ TOClink, prevURL, nextURL }) {
           <div className={noNextPrev}>{prevInnards}</div>
         ) : (
           <Link href={prevURL}>
-            <div className={nextPrev}>{prevInnards}</div>
+            <a className={nextPrev}>{prevInnards}</a>
           </Link>
         )}
         <Link href={TOClink}>
-          <div className="flex px-4 lg:px-6 py-2 border-solid border-4 border-[rgb(70,70,70)] lgPh:hover:border-black bg-[rgb(250,250,250)] dark:bg-[rgb(23,21,21)] lgPh:hover:bg-white dark:border-gray-300  dark:lgPh:hover:border-white dark:lgPh:hover:text-white dark:lgPh:hover:bg-[rgb(31,27,27)] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
+          <a className="flex px-4 lg:px-6 py-2 border-solid border-4 border-[rgb(70,70,70)] lgPh:hover:border-black bg-[rgb(250,250,250)] dark:bg-[rgb(23,21,21)] lgPh:hover:bg-white dark:border-gray-300  dark:lgPh:hover:border-white dark:lgPh:hover:text-white dark:lgPh:hover:bg-[rgb(31,27,27)] rounded-2xl items-center justify-center select-none hover:cursor-pointer">
             <div className="h-6 sm:h-7 flex items-center">TOC</div>
-          </div>
+          </a>
         </Link>
         {nextURL === "no" ? (
           <div className={noNextPrev}>{nextInnards}</div>
         ) : (
           <Link href={nextURL}>
-            <div className={nextPrev}>{nextInnards}</div>
+            <a className={nextPrev}>{nextInnards}</a>
           </Link>
         )}
       </div>
